@@ -100,6 +100,31 @@ begin
 end;
 ```
 
+</br>
+
+Tracking the piano keys with the mouse.
+
+</ber>
+
+```pascal
+procedure TForm1.La1MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+var m,i:integer;
+    gefunden:boolean;
+begin
+    soundinit;
+    gefunden:=false;
+    i:=36;
+    repeat
+      if (sender as tshape)=shapes[i] then gefunden:=true;
+      inc(i);
+    until gefunden or (i>96);
+    m:=i-1;
+    NoteOn(m, 127);
+    sleep(800);
+    NoteOff(m, 127);
+end;
+```
 
 
 
