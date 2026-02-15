@@ -155,8 +155,141 @@ begin
 end;
 ```
 
+### Playing a melody from a file...
 
+```pascal
+function laengentest(c:char):integer;
+begin
+    case c of
+      'V' : laengentest:=voll;
+      'D' : laengentest:=2*voll;
+      '3' : laengentest:=3*(voll div 2);
+      'H' : laengentest:=voll div 2;
+      '4' : laengentest:=voll div 4;
+      '8' : laengentest:=voll div 8;
+      else laengentest:=voll;
+    end;
+end;
+begin
+    if not abbruch then begin
+      abbruch:=true;
+      exit;
+    end;
+  sel:=lb3.itemindex;
+  if sel>=0 then begin
+    voll:=updown2.position;
+    abbruch:=false;
+    d1.caption:='Stop';
+    d9.enabled:=false;
+    application.processmessages;
 
-
+    case sel of
+     0..4 : wtextdll('melo'+inttostr(sel+1));
+     else
+     begin
+       soundpi;
+       abbruch:=true;
+       d1.caption:='Play melody';
+       d9.enabled:=true;
+       exit
+     end;
+    end;
+    soundinit;
+    tonan:=false;
+    i:=0;
+    repeat
+      s:=melodieliste[i];
+      case s[1] of
+        'N' : begin
+                tonan:=not tonan;
+                n:=strtoint(copy(s,3,20));
+                if s[2]='1' then NoteOn(n, 127)
+                            else NoteOff(n, 127)
+              end;
+        'P' : begin
+                laenge:=laengentest(s[2]);
+                sleep(laenge);
+              end;
+        'T' : begin
+                if s[2]='-' then voll:=voll-80
+                            else voll:=voll+80;
+              end;
+        '1' : begin
+                laenge:=laengentest(s[2]);
+                delete(s,1,2);
+                n1:=strtoint(s);
+                note(n1,laenge);
+              end;
+        '2' : begin
+                laenge:=laengentest(s[2]);
+                delete(s,1,2);
+                n1:=strtoint(copy(s,1,pos(',',s)-1));
+                delete(s,1,pos(',',s));
+                n2:=strtoint(s);
+                note(n1,n2,laenge);
+              end;
+        '3' : begin
+                laenge:=laengentest(s[2]);
+                delete(s,1,2);
+                n1:=strtoint(copy(s,1,pos(',',s)-1));
+                delete(s,1,pos(',',s));
+                n2:=strtoint(copy(s,1,pos(',',s)-1));
+                delete(s,1,pos(',',s));
+                n3:=strtoint(s);
+                note(n1,n2,n3,laenge);
+              end;
+        '4' : begin
+                laenge:=laengentest(s[2]);
+                delete(s,1,2);
+                n1:=strtoint(copy(s,1,pos(',',s)-1));
+                delete(s,1,pos(',',s));
+                n2:=strtoint(copy(s,1,pos(',',s)-1));
+                delete(s,1,pos(',',s));
+                n3:=strtoint(copy(s,1,pos(',',s)-1));
+                delete(s,1,pos(',',s));
+                n4:=strtoint(s);
+                note(n1,n2,n3,n4,laenge);
+              end;
+        '5' : begin
+                laenge:=laengentest(s[2]);
+                delete(s,1,2);
+                n1:=strtoint(copy(s,1,pos(',',s)-1));
+                delete(s,1,pos(',',s));
+                n2:=strtoint(copy(s,1,pos(',',s)-1));
+                delete(s,1,pos(',',s));
+                n3:=strtoint(copy(s,1,pos(',',s)-1));
+                delete(s,1,pos(',',s));
+                n4:=strtoint(copy(s,1,pos(',',s)-1));
+                delete(s,1,pos(',',s));
+                n5:=strtoint(s);
+                note(n1,n2,n3,n4,n5,laenge);
+              end;
+        '6' : begin
+                laenge:=laengentest(s[2]);
+                delete(s,1,2);
+                n1:=strtoint(copy(s,1,pos(',',s)-1));
+                delete(s,1,pos(',',s));
+                n2:=strtoint(copy(s,1,pos(',',s)-1));
+                delete(s,1,pos(',',s));
+                n3:=strtoint(copy(s,1,pos(',',s)-1));
+                delete(s,1,pos(',',s));
+                n4:=strtoint(copy(s,1,pos(',',s)-1));
+                delete(s,1,pos(',',s));
+                n5:=strtoint(copy(s,1,pos(',',s)-1));
+                delete(s,1,pos(',',s));
+                n6:=strtoint(s);
+                note(n1,n2,n3,n4,n5,n6,laenge);
+              end;
+      end;
+      inc(i);
+    until (i>melodieliste.count-1) or abbruch;
+    if abbruch then
+      for i:=36 to 96 do NoteOff(i,127);
+    abbruch:=true;
+    d1.caption:='Play melody';
+    d9.enabled:=true;
+  end;
+end;
+```
 
 
