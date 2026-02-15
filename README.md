@@ -20,7 +20,85 @@ An electronic musical instrument or electrophone is a musical instrument that pr
 
 An electronic instrument might include a user interface for controlling its sound, often by adjusting the [pitch](https://en.wikipedia.org/wiki/Pitch_(music)), frequency, or duration of each note. A common user interface is the [musical keyboard](https://en.wikipedia.org/wiki/Musical_keyboard), which functions similarly to the keyboard on an acoustic [piano](https://en.wikipedia.org/wiki/Piano) where the keys are each linked mechanically to swinging string hammers - whereas with an electronic keyboard, the keyboard interface is linked to a synth module, computer or other electronic or digital sound generator, which then creates a sound. However, it is increasingly common to separate user interface and sound-generating functions into a music controller ([input device](https://en.wikipedia.org/wiki/Input_device)) and a [music synthesizer](https://en.wikipedia.org/wiki/Music_synthesizer), respectively, with the two devices communicating through a musical performance description language such as MIDI or Open Sound Control. The solid state nature of electronic keyboards also offers differing feel and response, offering a novel experience in playing relative to operating a mechanically linked piano keyboard.
 
+# Construction:
+Create the piano keys.
 
+```pascal
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+   GetMidiOutDevices2;
+   InitMIDI;
+
+   melodieliste:=tstringlist.create;
+   abbruch:=true;
+   voll:=640;
+
+   radiogroup1.itemindex:=0;
+   lb3.itemindex:=2;
+
+    shapes[36]:=do1;
+    shapes[37]:=do1d;
+    shapes[38]:=re1;
+    shapes[39]:=re1d;
+    shapes[40]:=mi1;
+    shapes[41]:=fa1;
+    shapes[42]:=fa1d;
+    shapes[43]:=sol1;
+    shapes[44]:=sol1d;
+    shapes[45]:=la1;
+    shapes[46]:=la1d;
+    shapes[47]:=si1;
+    shapes[48]:=do2;
+    shapes[49]:=do2d;
+    shapes[50]:=re2;
+    shapes[51]:=re2d;
+    shapes[52]:=mi2;
+    shapes[53]:=fa2;
+    shapes[54]:=fa2d;
+    shapes[55]:=sol2;
+    shapes[56]:=sol2d;
+    shapes[57]:=la2;
+    shapes[58]:=la2d;
+    shapes[59]:=si2;
+    shapes[60]:=do3;
+    shapes[61]:=do3d;
+    shapes[62]:=re3;
+    shapes[63]:=re3d;
+    shapes[64]:=mi3;
+    shapes[65]:=fa3;
+    shapes[66]:=fa3d;
+    shapes[67]:=sol3;
+    shapes[68]:=sol3d;
+    shapes[69]:=la3;
+    shapes[70]:=la3d;
+    shapes[71]:=si3;
+    shapes[72]:=do4;
+    shapes[73]:=do4d;
+    shapes[74]:=re4;
+    shapes[75]:=re4d;
+    shapes[76]:=mi4;
+    shapes[77]:=fa4;
+    shapes[78]:=fa4d;
+    shapes[79]:=sol4;
+    shapes[80]:=sol4d;
+    shapes[81]:=la4;
+    shapes[82]:=la4d;
+    shapes[83]:=si4;
+    shapes[84]:=do5;
+    shapes[85]:=do5d;
+    shapes[86]:=re5;
+    shapes[87]:=re5d;
+    shapes[88]:=mi5;
+    shapes[89]:=fa5;
+    shapes[90]:=fa5d;
+    shapes[91]:=sol5;
+    shapes[92]:=sol5d;
+    shapes[93]:=la5;
+    shapes[94]:=la5d;
+    shapes[95]:=si5;
+    shapes[96]:=do6;
+end;
+```
 
 
 
