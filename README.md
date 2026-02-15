@@ -12,9 +12,13 @@
 
 An electronic musical instrument or electrophone is a musical instrument that produces sound using [electronic circuitry](https://en.wikipedia.org/wiki/Electronics). Such an instrument sounds by outputting an electrical, electronic or digital [audio signal](https://en.wikipedia.org/wiki/Audio_signal) that ultimately is plugged into a power amplifier which drives a loudspeaker, creating the sound heard by the performer and listener.
 
+</br>
 
+![Instruments](https://github.com/user-attachments/assets/4779efee-8ebc-4fd5-a342-4ac96b970a9d)
 
+</br>
 
+An electronic instrument might include a user interface for controlling its sound, often by adjusting the [pitch](https://en.wikipedia.org/wiki/Pitch_(music)), frequency, or duration of each note. A common user interface is the [musical keyboard](https://en.wikipedia.org/wiki/Musical_keyboard), which functions similarly to the keyboard on an acoustic [piano](https://en.wikipedia.org/wiki/Piano) where the keys are each linked mechanically to swinging string hammers - whereas with an electronic keyboard, the keyboard interface is linked to a synth module, computer or other electronic or digital sound generator, which then creates a sound. However, it is increasingly common to separate user interface and sound-generating functions into a music controller ([input device](https://en.wikipedia.org/wiki/Input_device)) and a [music synthesizer](https://en.wikipedia.org/wiki/Music_synthesizer), respectively, with the two devices communicating through a musical performance description language such as MIDI or Open Sound Control. The solid state nature of electronic keyboards also offers differing feel and response, offering a novel experience in playing relative to operating a mechanically linked piano keyboard.
 
 
 
