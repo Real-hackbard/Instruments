@@ -10,7 +10,7 @@
 
 </br>
 
-
+An electronic musical instrument or electrophone is a musical instrument that produces sound using [electronic circuitry](https://en.wikipedia.org/wiki/Electronics). Such an instrument sounds by outputting an electrical, electronic or digital [audio signal](https://en.wikipedia.org/wiki/Audio_signal) that ultimately is plugged into a power amplifier which drives a loudspeaker, creating the sound heard by the performer and listener.
 
 
 
