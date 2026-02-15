@@ -21,7 +21,8 @@ An electronic musical instrument or electrophone is a musical instrument that pr
 An electronic instrument might include a user interface for controlling its sound, often by adjusting the [pitch](https://en.wikipedia.org/wiki/Pitch_(music)), frequency, or duration of each note. A common user interface is the [musical keyboard](https://en.wikipedia.org/wiki/Musical_keyboard), which functions similarly to the keyboard on an acoustic [piano](https://en.wikipedia.org/wiki/Piano) where the keys are each linked mechanically to swinging string hammers - whereas with an electronic keyboard, the keyboard interface is linked to a synth module, computer or other electronic or digital sound generator, which then creates a sound. However, it is increasingly common to separate user interface and sound-generating functions into a music controller ([input device](https://en.wikipedia.org/wiki/Input_device)) and a [music synthesizer](https://en.wikipedia.org/wiki/Music_synthesizer), respectively, with the two devices communicating through a musical performance description language such as MIDI or Open Sound Control. The solid state nature of electronic keyboards also offers differing feel and response, offering a novel experience in playing relative to operating a mechanically linked piano keyboard.
 
 # Construction:
-Create the piano keys.
+
+### Create the piano keys.
 
 ```pascal
 procedure TForm1.FormCreate(Sender: TObject);
@@ -102,7 +103,7 @@ end;
 
 </br>
 
-Tracking the piano keys with the mouse.
+### Tracking the piano keys with the mouse.
 
 </ber>
 
@@ -126,7 +127,7 @@ begin
 end;
 ```
 
-Init Instruments..
+### Init Instruments..
 
 ```pascal
 procedure tForm1.soundinit;
