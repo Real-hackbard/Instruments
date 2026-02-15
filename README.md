@@ -126,6 +126,34 @@ begin
 end;
 ```
 
+Init Instruments..
+
+```pascal
+procedure tForm1.soundinit;
+begin
+  case radiogroup1.itemindex of
+    0 : SetCurrentInstrument(midiAcousticGrandPiano);
+    1 : SetCurrentInstrument(midiStringEnsemble1);
+    2 : SetCurrentInstrument(midiGlockenspiel);
+    3 : SetCurrentInstrument(midiviola);
+    4 : SetCurrentInstrument(midiClarinet);
+    5 : SetCurrentInstrument(midiSynthStrings1);
+    6 : SetCurrentInstrument(midiTrombone);
+    7 : SetCurrentInstrument(midiPanFlute);
+    8 : SetCurrentInstrument(midiPercussiveOrgan);
+    9 : SetCurrentInstrument(midiAcousticGuitarNylon);
+   10 : SetCurrentInstrument(midiTangoAccordion);
+   11 : SetCurrentInstrument(midiTubularBells);
+   12 : SetCurrentInstrument(midiTenorSax);
+   13 : SetCurrentInstrument(midiPiccolo);
+    else
+        SetCurrentInstrument(midiClavinet);
+  end;
+  SetPlaybackVolume(65535);
+  Form1.TrackBar2Change(nil);
+end;
+```
+
 
 
 
